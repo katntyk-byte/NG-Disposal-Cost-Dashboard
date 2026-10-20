@@ -110,18 +110,17 @@ st.markdown(
         padding: 0;
     }
 
-    .header-meta {
-        text-align: left;
-        font-size: 14px;
-        line-height: 1.8;
-        color: #111827;
-        padding-top: 2px;
-    }
+    .header-meta,
+.header-meta * {
+    font-size: 15px !important;
+}
+    line-height: 1.7 !important;
+    color: #4b5876 !important;
+}
 
-    .header-meta b {
-        display: inline-block;
-        min-width: 88px;
-    }
+.header-meta b {
+    font-weight: 700 !important;
+}
 
     /* KPI cards */
     .kpi-card {
@@ -421,119 +420,90 @@ st.markdown(
         border-bottom:1px solid #0d2d45;
         text-shadow:0 1px 1px rgba(0,0,0,.25);
     }
-    .sep-item {
-        min-height:53px;
-        padding:4px 8px 5px;
-        border-bottom:1px solid #e5e7eb;
-        box-sizing:border-box;
-        transition:background .15s ease;
-    }
-    .sep-item:last-child { border-bottom:0; }
-    .sep-label {
-        font-size:13px;
-        line-height:1.15;
-        font-weight:700;
-        color:#111827;
-        margin-bottom:4px;
-    }
-    .sep-row {
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:8px;
-    }
-    .sep-value {
-        font-size:15px;
-        line-height:1;
-        font-weight:800;
-        color:#f00000;
-    }
-    .sep-pct {
-        position:relative;
-        width:112px;
-        height:22px;
-        flex:0 0 112px;
-        box-sizing:border-box;
-        border:0;
-        border-radius:12px;
-        background:transparent;
-        box-shadow:none;
-        font-size:12px;
-        font-weight:700;
-        color:#222;
-        overflow:visible;
-        padding:0;
-    }
 
-    .sep-pct::before {
-        content:"";
-        position:absolute;
-        left:-8px;
-        right:40px;
-        top:50%;
-        height:6px;
-        transform:translateY(-50%);
-        border-radius:6px;
-        background:linear-gradient(180deg,#e7e8ee 0%,#d7d9e1 50%,#cdd0d9 100%);
-    }
+/* =========================================
+   OCTOBER DISPOSAL COST
+   ========================================= */
 
-    .sep-pct-fill {
-        position:absolute;
-        left:-8px;
-        top:50%;
-        height:5px;
-        min-width:0;
-        transform:translateY(-50%);
-        background:linear-gradient(
-            90deg,
-            #ff5b62 0%,
-            #ff3f48 45%,
-            #ff2633 75%,
-            #f01827 100%
-        );
-        border-radius:6px;
-        box-shadow:none;
-        opacity:1;
-    }
+.reference-oct-title {
+    background: linear-gradient(180deg, #245b86 0%, #173f63 100%);
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    padding: 7px 10px !important;
+    margin: 0 0 10px 0 !important;
+    border-radius: 8px 8px 0 0 !important;
+    line-height: 1.2 !important;
+}
 
-    .sep-pct-fill::after {
-        content:"";
-        position:absolute;
-        right:-6px;
-        top:50%;
-        width:13px;
-        height:13px;
-        transform:translateY(-50%);
-        border-radius:50%;
-        background:linear-gradient(145deg,#ff7078 0%,#ff3542 52%,#ed1020 100%);
-        box-shadow:0 1px 2px rgba(0,0,0,.20);
-    }
+.sep-item {
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0 4px;
+    box-sizing: border-box;
+}
 
-    .sep-pct-text {
-        position:absolute;
-        right:-2px;
-        top:50%;
-        transform:translateY(-50%);
-        z-index:2;
-        color:#222;
-        font-weight:700;
-        text-shadow:none;
-        white-space:nowrap;
-        min-width:31px;
-        text-align:right;
-        margin:0;
-    }
+.sep-info {
+    width: 100%;
+    margin: 0 0 4px 0;
+}
 
-    .sep-pct-text.light {
-        color:#222;
-        text-shadow:none;
-    }
+.sep-label {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
 
-    .sep-item:nth-child(2) { background:#fff; }
-    .sep-item:nth-child(3) { background:#fff8dc; }
-    .sep-item:nth-child(4) { background:#dff2fb; }
-    .sep-item:nth-child(5) { background:#dff2fb; }
-    .sep-item:nth-child(6) { background:#fff; }
+    white-space: nowrap;
+}
+
+.sep-bar {
+    position: relative;
+    width: calc(100% - 42px);
+    height: 25px;
+    background: #edf0f3;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.sep-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #ffb3b8 0%, #ff6b75 45%, #e51f32 100%);
+    transition: width 0.3s ease;
+}
+
+.sep-value {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    white-space: nowrap;
+    z-index: 5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.sep-percent {
+    display: inline-flex;
+    width: 36px;
+    height: 25px;
+    margin-left: 6px;
+    align-items: center;
+    justify-content: flex-end;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+}
 
     /* Streamlit chart / spacing */
     div[data-testid="stVerticalBlock"] > div:has(> div.stPlotlyChart) {
@@ -649,17 +619,15 @@ st.markdown(
     /* ---------- PROCESS LABEL ---------- */
 
     .reference-process-label {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #c40000 !important;
+    text-align: center !important;
 
-        font-size: 15px;
-
-        font-weight: 700;
-
-        color: #c40000;
-
-        text-align: center;
-
-        margin-bottom: 2px;
-    }
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    line-height: 1.2 !important;
+}
 
 
     /* ---------- PLOTLY ---------- */
@@ -679,13 +647,28 @@ st.markdown(
 
     .reference-oct-title {
 
-        font-size: 19px;
+        background: linear-gradient(180deg, #245b86 0%, #173f63 100%) !important;
 
-        font-weight: 700;
+        color: #ffffff !important;
 
-        color: #10183d;
+        -webkit-text-fill-color: #ffffff !important;
 
-        margin-bottom: 18px;
+        font-size: 21px !important;
+
+        font-weight: 700 !important;
+
+        line-height: 1.2 !important;
+
+        padding: 7px 10px !important;
+
+        margin: 0 0 10px 0 !important;
+
+        border-radius: 8px 8px 0 0 !important;
+    }
+
+    .reference-oct-title * {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
     }
 
 
@@ -825,31 +808,209 @@ st.markdown(
 )
 
 st.markdown("""<style>
-:root { --nav-width: 78px; --nav-blue:#3559e6; }
-.stApp { background:#f4f6fb !important; }
-section[data-testid="stSidebar"] { display:none !important; }
-[data-testid="stAppViewContainer"] { margin-left:var(--nav-width) !important; }
-.block-container { max-width:1500px !important; padding:22px 26px 18px 26px !important; }
-.reference-nav { position:fixed; left:0; top:0; bottom:0; width:var(--nav-width); background:rgba(255,255,255,.96); border-right:1px solid #e9ecf5; z-index:999999; display:flex; flex-direction:column; align-items:center; padding-top:22px; box-sizing:border-box; }
-.reference-nav-logo { width:38px; height:38px; border-radius:11px; background:linear-gradient(145deg,#6678f2,#3559e6); color:#fff; display:flex; align-items:center; justify-content:center; font-size:21px; font-weight:800; margin-bottom:34px; box-shadow:0 5px 14px rgba(53,89,230,.22); }
-.reference-nav-item { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#7180a8; font-size:21px; margin-bottom:13px; box-sizing:border-box; }
-.reference-nav-item.active { background:#eef2ff; color:var(--nav-blue); }
-.reference-nav-spacer { flex:1; }
-.dashboard-header { background:transparent !important; border-bottom:1px solid #dfe3ec !important; padding-bottom:13px !important; margin-bottom:18px !important; }
-.dashboard-title { font-size:31px !important; font-weight:800 !important; color:#0d1735 !important; }
-.header-meta { font-size:12px !important; line-height:1.65 !important; color:#4b5876 !important; }
-.st-key-k1,.st-key-k2,.st-key-k3,.st-key-k4 { height:148px !important; min-height:148px !important; max-height:148px !important; }
-.kpi-card { min-height:148px !important; border-radius:16px !important; padding:17px 18px 14px !important; box-shadow:0 7px 20px rgba(70,80,140,.07) !important; }
-.kpi-title { font-size:17px !important; }
+/* =========================
+   LEFT SIDEBAR
+   ========================= */
+
+.stApp { background:#EEF0F3 !important; }
+
+section[data-testid="stSidebar"] {
+    background:#ffffff !important;
+    border-right:1px solid #e8ebf3 !important;
+    min-width:230px !important;
+    max-width:230px !important;
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+    padding-top:24px !important;
+    padding-left:18px !important;
+    padding-right:18px !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+    padding-top:0 !important;
+}
+
+section[data-testid="stSidebar"] h2 {
+    color:#17213d !important;
+    font-size:18px !important;
+    font-weight:800 !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] {
+    background:#f7f8fc !important;
+    border:1px dashed #cbd3ea !important;
+    border-radius:12px !important;
+    padding:12px !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    background:transparent !important;
+    border:none !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploader"] button {
+    border-radius:9px !important;
+    border:1px solid #d9dff0 !important;
+    background:#ffffff !important;
+    color:#3559e6 !important;
+    font-weight:600 !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color:#8a93aa !important;
+    font-size:11px !important;
+    line-height:1.6 !important;
+}
+
+/* =========================
+   SIDEBAR COLLAPSE BUTTON
+   Keep the real Streamlit button clickable,
+   but replace the Material Icon text with »
+   ========================= */
+
+button[data-testid="stSidebarCollapseButton"] {
+    position: relative !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+button[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"],
+button[data-testid="stSidebarCollapseButton"] .material-symbols-rounded,
+button[data-testid="stSidebarCollapseButton"] .material-icons {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+button[data-testid="stSidebarCollapseButton"] [data-testid="stIconMaterial"]::before,
+button[data-testid="stSidebarCollapseButton"] .material-symbols-rounded::before,
+button[data-testid="stSidebarCollapseButton"] .material-icons::before {
+    content: "»" !important;
+    display: inline-block !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    color: #4b5876 !important;
+    pointer-events: none !important;
+}
+
+/* Make sure the replacement icon never blocks the real button click */
+button[data-testid="stSidebarCollapseButton"]::before,
+button[data-testid="stSidebarCollapseButton"]::after {
+    pointer-events: none !important;
+}
+
+/* Keep dashboard content at normal position */
+[data-testid="stAppViewContainer"] {
+    margin-left:0 !important;
+}
+
+.dashboard-header {
+    background:transparent !important;
+    border-bottom:1px solid #dfe3ec !important;
+    padding-bottom:13px !important;
+    margin-bottom:18px !important;
+}
+
+.dashboard-title {
+    font-size:31px !important;
+    font-weight:800 !important;
+    color:#0d1735 !important;
+}
+
+.header-meta {
+    font-size:12px !important;
+    line-height:1.65 !important;
+    color:#4b5876 !important;
+}
+
+.st-key-k1,.st-key-k2,.st-key-k3,.st-key-k4 {
+    height:148px !important;
+    min-height:148px !important;
+    max-height:148px !important;
+}
+
+.kpi-card {
+    min-height: 148px !important;
+    height: 148px !important;
+
+    border-radius: 16px !important;
+    padding: 14px 18px !important;
+
+    box-shadow: 0 7px 20px rgba(70,80,140,.07) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    box-sizing: border-box !important;
+}
+
+/* เลื่อนข้อความทั้งชุดลงเล็กน้อย */
+.kpi-card > div {
+    transform: translateY(7px);
+}
+
+/* หัวข้อ */
+.kpi-card .kpi-title {
+    text-align: center !important;
+}
+
+/* ตัวเลข */
+.kpi-card .kpi-value {
+    text-align: center !important;
+}
+
+/* ข้อความด้านล่าง */
+.kpi-card .kpi-sub {
+    text-align: center !important;
+}
+
+.kpi-title { font-size:20px !important; }
 .kpi-value { font-size:34px !important; }
-.kpi-sub { font-size:13px !important; }
-.st-key-process_card,.st-key-warehouse_card,.st-key-model_card { height:304px !important; min-height:304px !important; max-height:304px !important; border-radius:16px !important; padding:16px 16px 8px !important; box-shadow:0 7px 20px rgba(70,80,140,.07) !important; }
-.reference-card-title { font-size:21px !important; color:#0d1735 !important; margin-bottom:7px !important; }
-.st-key-process_card .stPlotlyChart,.st-key-warehouse_card .stPlotlyChart,.st-key-model_card .stPlotlyChart,.st-key-trend_card .stPlotlyChart { margin:0 !important; padding:0 !important; }
-.st-key-trend_card,.st-key-october_card { height:350px !important; min-height:350px !important; max-height:350px !important; border-radius:16px !important; box-shadow:0 7px 20px rgba(70,80,140,.07) !important; }
-.footer { color:#7a849d !important; font-size:12px !important; }
+.kpi-sub {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+
+.st-key-process_card,.st-key-warehouse_card,.st-key-model_card {
+    height:304px !important;
+    min-height:304px !important;
+    max-height:304px !important;
+    border-radius:16px !important;
+    padding:16px 16px 8px !important;
+    box-shadow:0 7px 20px rgba(70,80,140,.07) !important;
+}
+
+.reference-card-title {
+    font-size:21px !important;
+    color:#0d1735 !important;
+    margin-bottom:7px !important;
+}
+
+.st-key-process_card .stPlotlyChart,
+.st-key-warehouse_card .stPlotlyChart,
+.st-key-model_card .stPlotlyChart,
+.st-key-trend_card .stPlotlyChart {
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.st-key-trend_card,.st-key-october_card {
+    height:390px !important;
+    min-height:390px !important;
+    max-height:390px !important;
+    border-radius:16px !important;
+    box-shadow:0 7px 20px rgba(70,80,140,.07) !important;
+}
+
+.footer { color:#7a849d !important; font-size:14px !important; }
 </style>""", unsafe_allow_html=True)
-st.markdown("""<div class="reference-nav"><div class="reference-nav-logo">✓</div><div class="reference-nav-item active">⌂</div><div class="reference-nav-item">▥</div><div class="reference-nav-item">▤</div><div class="reference-nav-item">◫</div><div class="reference-nav-item">▣</div><div class="reference-nav-spacer"></div><div class="reference-nav-item">⚙</div></div>""", unsafe_allow_html=True)
 
 
 def num(v):
@@ -925,9 +1086,6 @@ with st.sidebar:
     uploaded = st.file_uploader("Upload Disposal Cost Excel", type=["xlsb"])
     st.caption("Required sheets: Monitor, GI Disposal, Report")
     st.divider()
-    st.markdown("### 📌 Supported Sheets")
-    st.markdown("- Monitor\n- GI Disposal\n- Report")
-
 
 file_bytes = None
 file_name = ""
@@ -1126,7 +1284,7 @@ with k4:
 
 # เว้นระยะระหว่าง KPI กับ Card แถวกลาง
 st.markdown(
-    "<div style='height:24px;'></div>",
+    "<div style='height:30px;'></div>",
     unsafe_allow_html=True
 )
 
@@ -1250,7 +1408,7 @@ with pcol:
 
                 fig_process.update_layout(
 
-                    height=205,
+                    height=185,
 
                     margin=dict(
                         l=0,
@@ -1621,13 +1779,13 @@ with mcol:
                 font=dict(family="Roboto"),
                 legend=dict(
                     orientation="v",
-                    x=0.62,
+                    x=0.54,
                     xanchor="left",
                     y=0.50,
                     yanchor="middle",
                     bgcolor="rgba(255,255,255,0)",
                     borderwidth=0,
-                    font=dict(family="Roboto", size=13, color="#111827")
+                    font=dict(family="Roboto", size=16, color="#111827")
                 )
             )
 
@@ -1649,7 +1807,7 @@ st.markdown(
 )
 
 trend_col, sep_col = st.columns(
-    [3.35, 1.00],
+    [3.5, 1.0],
     gap="small"
 )
 
@@ -1668,7 +1826,7 @@ with trend_col:
         st.markdown(
             """
             <div class="reference-card-title">
-                ↗ Actual Disposal Cost Trend 2026
+                Actual Disposal Cost Trend 2026
             </div>
             """,
             unsafe_allow_html=True
@@ -1782,7 +1940,7 @@ with trend_col:
 
 
         trend_fig.update_layout(
-            height=295,
+            height=335,
             margin=dict(l=55, r=10, t=8, b=30),
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
@@ -1798,7 +1956,7 @@ with trend_col:
                 y=1.08,
                 xanchor="right",
                 yanchor="bottom",
-                font=dict(size=13)
+                font=dict(size=15)
             ),
             xaxis=dict(
                 categoryorder="array",
@@ -1915,48 +2073,33 @@ with sep_col:
             )
 
             value_text = (
-                f"฿ {value:,.2f}"
+                f"{value:,.0f} THB"
                 if value
                 else
-                "฿ -"
+                "0 THB"
             )
 
-            text_class = (
-                "light"
-                if ratio >= 60
-                else ""
-            )
+            text_class = ""
 
             html = (
-                '<div class="sep-item">'
+    '<div class="sep-item">'
 
-                '<div class="sep-label">'
-                f'{label}'
-                '</div>'
+    '<div class="sep-info">'
+        f'<div class="sep-label">{label}</div>'
+    '</div>'
 
-                '<div class="sep-row">'
+    '<div class="sep-bar">'
 
-                '<div class="sep-value">'
-                f'{value_text}'
-                '</div>'
+        f'<div class="sep-fill" style="width:{ratio_fill:.1f}%"></div>'
 
-                '<div class="sep-pct">'
+        f'<div class="sep-value">{value_text}</div>'
 
-                '<div '
-                'class="sep-pct-fill" '
-                f'style="width:calc({ratio_fill:.1f}% * 0.69);">'
-                '</div>'
+    '</div>'
 
-                f'<span class="sep-pct-text {text_class}">'
-                f'{ratio:.1f}%'
-                '</span>'
+    f'<div class="sep-percent">{ratio:.0f}%</div>'
 
-                '</div>'
-
-                '</div>'
-
-                '</div>'
-            )
+    '</div>'
+)
 
             st.markdown(
                 html,
